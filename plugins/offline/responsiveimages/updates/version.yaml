@@ -1,0 +1,8 @@
+1.0.1: First version of ResponsiveImages
+1.0.2: 
+    - Fixed encoding problems
+    - Fixed broken media manager when using custom backend url
+1.0.3: Added alternative-src config option to support jQuery.lazyLoad plugin
+1.0.4: Fixed handling of filenames containing spaces (Thanks to webeks!)
+1.1.0: Added settings page, support for lazy-loading plugins and responsive class attributes
+1.1.1: Added compatibility with current edgeUpdate builds

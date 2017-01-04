@@ -1,0 +1,29 @@
+plugin:
+    name: 'kienbt.digitalproduct::lang.plugin.name'
+    description: 'kienbt.digitalproduct::lang.plugin.description'
+    author: Kienbt
+    icon: oc-icon-shopping-cart
+    homepage: ''
+navigation:
+    digital-product:
+        label: 'kienbt.digitalproduct::lang.plugin.digitalproduct'
+        url: kienbt/digitalproduct/products
+        icon: icon-shopping-cart
+        sideMenu:
+            side-menu-item:
+                label: 'Menu Item'
+                icon: icon-sitemap
+                url: /
+permissions:
+    kienbt.digitalproduct.manage_products:
+        tab: 'kienbt.digitalproduct::lang.plugin.name'
+        label: 'kienbt.digitalproduct::lang.manage_products'
+    kienbt.digitalproduct.manage_categories:
+        tab: 'kienbt.digitalproduct::lang.plugin.name'
+        label: 'kienbt.digitalproduct::lang.plugin.manage_categories'
+    kienbt.digitalproduct.manage_orders:
+        tab: 'kienbt.digitalproduct::lang.plugin.name'
+        label: 'kienbt.digitalproduct::lang.plugin.manage_order'
+    kienbt.digitalproduct.manage_discounts:
+        tab: 'kienbt.digitalproduct::lang.plugin.name'
+        label: 'kienbt.digitalproduct::lang.plugin.manage_discounts'

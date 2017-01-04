@@ -1,0 +1,20 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table kienbt_digitalproduct_categories'
+    - builder_table_create_kienbt_digitalproduct_categories.php
+1.0.3:
+    - 'Created table kienbt_digitalproduct_category_product'
+    - builder_table_create_kienbt_digitalproduct_category_product.php
+1.0.4:
+    - 'Created table kienbt_digitalproduct_discounts'
+    - builder_table_create_kienbt_digitalproduct_discounts.php
+1.0.5:
+    - 'Created table kienbt_digitalproduct_order_items'
+    - builder_table_create_kienbt_digitalproduct_order_items.php
+1.0.6:
+    - 'Created table kienbt_digitalproduct_orders'
+    - builder_table_create_kienbt_digitalproduct_orders.php
+1.0.7:
+    - 'Created table kienbt_digitalproduct_products'
+    - builder_table_create_kienbt_digitalproduct_products.php

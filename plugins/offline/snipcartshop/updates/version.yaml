@@ -1,0 +1,18 @@
+1.0.1:
+    - 'Initial release.'
+    - builder_table_create_offline_snipcartshop_products.php
+    - builder_table_create_offline_snipcartshop_product_variants.php
+    - builder_table_create_offline_snipcartshop_product_custom_fields.php
+    - builder_table_create_offline_snipcartshop_product_custom_field_options.php
+    - builder_table_create_offline_snipcartshop_product_variant_custom_field_option.php
+    - builder_table_create_offline_snipcartshop_categories.php
+    - builder_table_create_offline_snipcartshop_category_product.php
+    - builder_table_create_offline_snipcartshop_orders.php
+    - builder_table_create_offline_snipcartshop_order_items.php
+    - builder_table_create_offline_snipcartshop_discounts.php
+1.0.2:
+    - 'Added support for product attributes, downloads and links // Optimized price validation'
+    - builder_table_update_offline_snipcartshop_products.php
+1.0.3:
+    - 'Added support for product accessories'
+    - builder_table_create_offline_snipcartshop_product_accessory.php
