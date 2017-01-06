@@ -1,12 +1,12 @@
 fields:
     name:
-        label: 'kienbt.digitalproduct::lang.plugin.categoryname'
+        label: 'kienbt.digitalproduct::lang.plugin.category.name'
         oc.commentPosition: ''
         span: auto
         required: 1
         type: text
     slug:
-        label: 'kienbt.digitalproduct::lang.plugin.slug'
+        label: 'kienbt.digitalproduct::lang.plugin.common.slug'
         oc.commentPosition: ''
         span: left
         required: 1
@@ -15,18 +15,18 @@ fields:
             type: slug
         type: text
     meta_title:
-        label: 'kienbt.digitalproduct::lang.plugin.meta_title'
+        label: 'kienbt.digitalproduct::lang.plugin.common.meta_title'
         oc.commentPosition: ''
         span: left
         type: text
     meta_description:
-        label: 'kienbt.digitalproduct::lang.plugin.meta_description'
+        label: 'kienbt.digitalproduct::lang.plugin.common.meta_description'
         size: ''
         oc.commentPosition: ''
         span: left
         type: textarea
     parent_id:
-        label: 'kienbt.digitalproduct::lang.plugin.parent'
+        label: 'kienbt.digitalproduct::lang.plugin.common.parent'
         span: left
         oc.commentPosition: ''
         type: dropdown

@@ -1,0 +1,27 @@
+columns:
+    user_defined_id:
+        label: 'kienbt.digitalproduct::lang.plugin.product.code'
+        type: text
+        searchable: true
+        sortable: true
+    name:
+        label: 'kienbt.digitalproduct::lang.plugin.product.name'
+        type: text
+        searchable: true
+        sortable: true
+    price:
+        label: 'kienbt.digitalproduct::lang.plugin.product.price'
+        type: text
+        searchable: true
+        sortable: true
+    published:
+        label: 'kienbt.digitalproduct::lang.plugin.product.published'
+        type: partial
+        sortable: true
+        path: $/kienbt/digitalproduct/models/product/_published.htm
+    categories:
+        label: 'kienbt.digitalproduct::lang.plugin.common.categories'
+        type: relation
+        select: name
+        sortable: true
+        searchable: true

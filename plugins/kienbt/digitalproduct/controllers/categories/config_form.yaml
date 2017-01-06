@@ -1,0 +1,16 @@
+name: 'kienbt.digitalproduct::lang.plugin.common.category'
+modelClass: Kienbt\Digitalproduct\Models\Category
+form: $/kienbt/digitalproduct/models/category/fields.yaml
+defaultRedirect: kienbt/digitalproduct/categories
+create:
+    title: 'kienbt.digitalproduct::lang.plugin.category.create'
+    redirect: 'kienbt/digitalproduct/categories/update/:id'
+    redirectClose: kienbt/digitalproduct/categories
+    flashSave: 'kienbt.digitalproduct::lang.plugin.category.create_msg'
+update:
+    title: 'kienbt.digitalproduct::lang.plugin.category.update'
+    redirect: kienbt/digitalproduct/categories
+    redirectClose: kienbt/digitalproduct/categories
+    flashSave: 'kienbt.digitalproduct::lang.plugin.category.update_msg'
+preview:
+    title: 'kienbt.digitalproduct::lang.plugin.category.preview'

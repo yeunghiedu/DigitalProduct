@@ -1,0 +1,13 @@
+title: 'kienbt.digitalproduct::lang.plugin.common.categories'
+modelClass: Kienbt\Digitalproduct\Models\Category
+list: $/kienbt/digitalproduct/models/category/columns.yaml
+recordUrl: 'kienbt/digitalproduct/categories/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+showTree: 1
+treeExpanded: 1

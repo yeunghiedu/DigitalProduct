@@ -6,24 +6,46 @@ plugin:
     homepage: ''
 navigation:
     digital-product:
-        label: 'kienbt.digitalproduct::lang.plugin.digitalproduct'
+        label: 'kienbt.digitalproduct::lang.plugin.name'
         url: kienbt/digitalproduct/products
         icon: icon-shopping-cart
+        permissions:
+            - 'kienbt.digitalproduct.*'
         sideMenu:
-            side-menu-item:
-                label: 'Menu Item'
+            digitalproduct-products:
+                label: 'kienbt.digitalproduct::lang.plugin.common.products'
+                url: kienbt/digitalproduct/products
+                icon: icon-cart-plus
+                permissions:
+                    - kienbt.digitalproduct.manage_products
+            digitalproduct-categories:
+                label: 'kienbt.digitalproduct::lang.plugin.common.categories'
+                url: kienbt/digitalproduct/categories
                 icon: icon-sitemap
-                url: /
+                permissions:
+                    - kienbt.digitalproduct.manage_categories
+            digitalproduct-orders:
+                label: 'kienbt.digitalproduct::lang.plugin.common.orders'
+                url: kienbt/digitalproduct/orders
+                icon: icon-check-circle
+                permissions:
+                    - kienbt.digitalproduct.manage_orders
+            digitalproduct-discounts:
+                label: 'kienbt.digitalproduct::lang.plugin.common.discounts'
+                url: kienbt/digitalproduct/discounts
+                icon: icon-gift
+                permissions:
+                    - kienbt.digitalproduct.manage_discounts
 permissions:
     kienbt.digitalproduct.manage_products:
         tab: 'kienbt.digitalproduct::lang.plugin.name'
-        label: 'kienbt.digitalproduct::lang.manage_products'
+        label: 'kienbt.digitalproduct::lang.plugin.manage.products'
     kienbt.digitalproduct.manage_categories:
         tab: 'kienbt.digitalproduct::lang.plugin.name'
-        label: 'kienbt.digitalproduct::lang.plugin.manage_categories'
+        label: 'kienbt.digitalproduct::lang.plugin.manage.categories'
     kienbt.digitalproduct.manage_orders:
         tab: 'kienbt.digitalproduct::lang.plugin.name'
-        label: 'kienbt.digitalproduct::lang.plugin.manage_order'
+        label: 'kienbt.digitalproduct::lang.plugin.manage.order'
     kienbt.digitalproduct.manage_discounts:
         tab: 'kienbt.digitalproduct::lang.plugin.name'
-        label: 'kienbt.digitalproduct::lang.plugin.manage_discounts'
+        label: 'kienbt.digitalproduct::lang.plugin.manage.discounts'

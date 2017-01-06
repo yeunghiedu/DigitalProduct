@@ -1,11 +1,11 @@
 columns:
     name:
-        label: 'kienbt.digitalproduct::lang.plugin.categoryname'
+        label: 'kienbt.digitalproduct::lang.plugin.category.name'
         type: text
         searchable: true
         sortable: true
     slug:
-        label: 'kienbt.digitalproduct::lang.plugin.slug'
+        label: 'kienbt.digitalproduct::lang.plugin.common.slug'
         type: text
         searchable: true
         sortable: true
