@@ -19,6 +19,7 @@ class Products extends Controller
 
     public function __construct()
     {
+        dd(123);
         parent::__construct();
         BackendMenu::setContext('OFFLINE.SnipcartShop', 'snipcart-shop', 'snipcartshop-products');
     }

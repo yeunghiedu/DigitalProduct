@@ -6,16 +6,17 @@ use BackendMenu;
 class Product extends Controller
 {
     public $implement = ['Backend\Behaviors\ListController','Backend\Behaviors\FormController'];
-    
+
     public $listConfig = 'config_list.yaml';
     public $formConfig = 'config_form.yaml';
 
     public $requiredPermissions = [
-        'kienbt.digitalproduct.manage_products' 
+        'kienbt.digitalproduct.manage_products'
     ];
 
     public function __construct()
     {
+        dd('123');
         parent::__construct();
         BackendMenu::setContext('Kienbt.Digitalproduct', 'digital-product', 'digitalproduct-products');
     }
