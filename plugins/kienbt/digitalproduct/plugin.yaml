@@ -24,6 +24,12 @@ navigation:
                 icon: icon-sitemap
                 permissions:
                     - kienbt.digitalproduct.manage_categories
+            digitalproduct-prodversion:
+                label: 'kienbt.digitalproduct::lang.plugin.product.version'
+                url: kienbt/digitalproduct/versions
+                icon: icon-random
+                permissions:
+                    - kienbt.digitalproduct.manage_products
             digitalproduct-orders:
                 label: 'kienbt.digitalproduct::lang.plugin.common.orders'
                 url: kienbt/digitalproduct/orders

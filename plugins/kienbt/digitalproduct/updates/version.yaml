@@ -18,3 +18,6 @@
 1.0.7:
     - 'Created table kienbt_digitalproduct_products'
     - builder_table_create_kienbt_digitalproduct_products.php
+1.0.8:
+    - 'Created table kienbt_digitalproduct_product_version'
+    - builder_table_create_kienbt_digitalproduct_product_version.php

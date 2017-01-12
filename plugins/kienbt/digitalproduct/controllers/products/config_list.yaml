@@ -1,7 +1,7 @@
 title: 'kienbt.digitalproduct::lang.plugin.common.products'
 modelClass: Kienbt\Digitalproduct\Models\Product
 list: $/kienbt/digitalproduct/models/product/columns.yaml
-recordUrl: 'kienbt/digitalproduct/product/update/:id'
+recordUrl: 'kienbt/digitalproduct/products/update/:id'
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 showCheckboxes: true

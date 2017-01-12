@@ -59,29 +59,7 @@ tabs:
         images:
             label: 'kienbt.digitalproduct::lang.plugin.common.feature_image'
             oc.commentPosition: ''
-            mode: file
-            useCaption: true
-            thumbOptions:
-                mode: crop
-                extension: auto
-            span: left
-            type: fileupload
-            tab: 'kienbt.digitalproduct::lang.plugin.common.attachments'
-        download:
-            label: 'kienbt.digitalproduct::lang.plugin.common.downloads'
-            oc.commentPosition: ''
-            mode: file
-            useCaption: true
-            thumbOptions:
-                mode: crop
-                extension: auto
-            span: right
-            type: fileupload
-            tab: 'kienbt.digitalproduct::lang.plugin.common.attachments'
-        sub_image:
-            label: 'kienbt.digitalproduct::lang.plugin.product.sub_image'
-            oc.commentPosition: ''
-            mode: file
+            mode: image
             useCaption: true
             thumbOptions:
                 mode: crop

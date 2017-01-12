@@ -1,0 +1,12 @@
+title: 'kienbt.digitalproduct::lang.plugin.product.version'
+modelClass: Kienbt\Digitalproduct\Models\Productversion
+list: $/kienbt/digitalproduct/models/productversion/columns.yaml
+recordUrl: 'kienbt/digitalproduct/versions/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+filter: config_filter.yaml

@@ -4,13 +4,13 @@ form: $/kienbt/digitalproduct/models/product/fields.yaml
 defaultRedirect: kienbt/digitalproduct/products
 create:
     title: 'kienbt.digitalproduct::lang.plugin.product.create'
-    redirect: 'kienbt/digitalproduct/product/update/:id'
-    redirectClose: kienbt/digitalproduct/product
+    redirect: 'kienbt/digitalproduct/products/update/:id'
+    redirectClose: kienbt/digitalproduct/products
     flashSave: 'kienbt.digitalproduct::lang.plugin.product.create_msg'
 update:
     title: 'kienbt.digitalproduct::lang.plugin.product.update'
-    redirect: kienbt/digitalproduct/product
-    redirectClose: kienbt/digitalproduct/product
+    redirect: kienbt/digitalproduct/products
+    redirectClose: kienbt/digitalproduct/products
     flashSave: 'kienbt.digitalproduct::lang.plugin.product.update_msg'
     flashDelete: 'kienbt.digitalproduct::lang.plugin.product.delete_msg'
 preview:

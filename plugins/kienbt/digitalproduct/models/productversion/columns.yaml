@@ -1,0 +1,12 @@
+columns:
+    name:
+        label: 'kienbt.digitalproduct::lang.plugin.common.name'
+        type: text
+        searchable: false
+        sortable: false
+    products:
+        label: 'kienbt.digitalproduct::lang.plugin.common.products'
+        relation: products
+        select: name
+        sortable: true
+        searchable: true

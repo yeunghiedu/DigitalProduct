@@ -1,0 +1,12 @@
+name: kienbt.digitalproduct.lang.product.version
+modelClass: Kienbt\Digitalproduct\Models\Productversion
+form: $/kienbt/digitalproduct/models/productversion/fields.yaml
+defaultRedirect: kienbt/digitalproduct/versions
+create:
+    title: 'kienbt.digitalproduct::lang.plugin.version.create'
+    redirect: 'kienbt/digitalproduct/versions/update/:id'
+    redirectClose: kienbt/digitalproduct/versions
+update:
+    title: 'kienbt.digitalproduct::lang.plugin.version.update'
+    redirect: kienbt/digitalproduct/versions
+    redirectClose: kienbt/digitalproduct/versions

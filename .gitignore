@@ -1,3 +1,6 @@
 .DS_Store
 *.log
-storage/
+storage/cms
+storage/framework
+storage/logs
+storage/temp

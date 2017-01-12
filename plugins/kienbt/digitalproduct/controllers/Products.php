@@ -3,7 +3,7 @@
 use Backend\Classes\Controller;
 use BackendMenu;
 
-class Product extends Controller
+class Products extends Controller
 {
     public $implement = ['Backend\Behaviors\ListController','Backend\Behaviors\FormController'];
 
@@ -16,7 +16,6 @@ class Product extends Controller
 
     public function __construct()
     {
-        dd('123');
         parent::__construct();
         BackendMenu::setContext('Kienbt.Digitalproduct', 'digital-product', 'digitalproduct-products');
     }

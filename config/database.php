@@ -54,11 +54,11 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => '50.87.164.13',
+            'host'      => 'localhost',
             'port'      => 3306,
-            'database'  => 'catvanlo_test',
-            'username'  => 'catvanlo_beta',
-            'password'  => 'wlWhVPmEEb0F',
+            'database'  => 'october',
+            'username'  => 'root',
+            'password'  => '',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

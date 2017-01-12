@@ -21,7 +21,7 @@ columns:
         path: $/kienbt/digitalproduct/models/product/_published.htm
     categories:
         label: 'kienbt.digitalproduct::lang.plugin.common.categories'
-        type: relation
+        relation: categories
         select: name
         sortable: true
         searchable: true

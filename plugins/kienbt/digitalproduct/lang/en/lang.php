@@ -13,10 +13,14 @@
             'parent' => 'Parent',
             'general' => 'General',
             'description' => 'Description',
-            'attachments' => 'Images/Download',
+            'attachments' => 'Attachments',
             'feature_image' => 'Feature Image',
             'downloads' => 'Downloads',
             'seo' => 'SEO',
+            'created_at' => 'CreateTime',
+            'hide_published' => 'Hide Published',
+            'name' => 'Name',
+            'no_parent' => 'No parent',
         ],
         'product' => [
             'name' => 'Product name',
@@ -33,6 +37,7 @@
             'update_msg' => 'Updated product successful',
             'delete_msg' => 'Deleted product successful',
             'preview' => 'Product preview',
+            'version' => 'Product Version',
         ],
         'category' => [
             'name' => 'Category name',
@@ -47,6 +52,10 @@
             'categories' => 'Can manage Categories',
             'order' => 'Can manage Orders',
             'discounts' => 'Can manage discounts',
+        ],
+        'version' => [
+            'create' => 'Create Product Version',
+            'update' => 'Update Product Version',
         ],
     ],
 ];
