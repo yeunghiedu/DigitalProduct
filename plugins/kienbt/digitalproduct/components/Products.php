@@ -120,12 +120,20 @@ class Products extends ComponentBase
 
     protected function loadProducts()
     {
-        // dd($this->category);
-        dd($this->category->product()->toSql(),$this->category->product()->getBindings());
-        $products = $this->category
-            ? $this->category->posts()->published()
-            : Product::published();
-            dd($products->paginate($this->property('productsPerPage', 10)));
+        if ($this->category) {
+            if (is_null($this->category->parent_id)) {
+                $cat_ids = [$this->category->id];
+                $this->category->children->each(function($child) use (&$cat_ids) {
+                    array_push($cat_ids, $child->id);
+                });
+                $products = Product::whereIn('category_id',$cat_ids)->published();
+            } else {
+                $products = $this->category->product()->published();
+            }
+            
+        } else {
+            $products = Product::published();
+        }
         return $products->paginate($this->property('productsPerPage', 10));
     }
 

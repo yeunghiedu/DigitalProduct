@@ -19,9 +19,9 @@ columns:
         type: partial
         sortable: true
         path: $/kienbt/digitalproduct/models/product/_published.htm
-    categories:
+    category:
         label: 'kienbt.digitalproduct::lang.plugin.common.categories'
-        relation: categories
+        relation: category
         select: name
         sortable: true
         searchable: true
