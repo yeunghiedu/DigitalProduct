@@ -1,0 +1,24 @@
+name: 'Main menu'
+items:
+    -
+        title: 'Trang chủ'
+        type: cms-page
+        code: ''
+        reference: home
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Themes
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: themes
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

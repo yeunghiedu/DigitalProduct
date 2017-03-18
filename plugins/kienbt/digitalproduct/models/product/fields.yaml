@@ -28,16 +28,18 @@ tabs:
             type: switch
             comment: 'kienbt.digitalproduct::lang.plugin.product.published_desc'
             tab: 'kienbt.digitalproduct::lang.plugin.common.general'
-        description_short:
-            label: 'kienbt.digitalproduct::lang.plugin.product.short_desc'
+        demo_url:
+            label: 'kienbt.digitalproduct::lang.plugin.product.demo_url'
             oc.commentPosition: ''
             span: left
+            required: 1
             type: text
             tab: 'kienbt.digitalproduct::lang.plugin.common.general'
         price:
             label: 'kienbt.digitalproduct::lang.plugin.product.price'
             oc.commentPosition: ''
             span: auto
+            default: '50000'
             required: 1
             type: number
             tab: 'kienbt.digitalproduct::lang.plugin.common.general'
@@ -48,13 +50,12 @@ tabs:
             span: left
             type: richeditor
             tab: 'kienbt.digitalproduct::lang.plugin.common.general'
-        categories:
+        category_id:
             label: 'kienbt.digitalproduct::lang.plugin.common.categories'
             oc.commentPosition: ''
-            nameFrom: name
-            descriptionFrom: description
-            span: right
-            type: relation
+            span: auto
+            defaultFrom: category_id
+            type: dropdown
             tab: 'kienbt.digitalproduct::lang.plugin.common.general'
         images:
             label: 'kienbt.digitalproduct::lang.plugin.common.feature_image'

@@ -1,0 +1,19 @@
+{# {% if records.lastPage > 1 %}
+  <nav aria-label="Page navigation" class="text-center">
+    <ul class="pagination">
+        {% if records.currentPage > 1 %}
+            <li><a href="{% if records.currentPage-1 != 1 %}{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}{% else %}{{this.page.url|replace({':page?':''})}}{% endif %}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+        {% endif %}
+
+        {% for page in 1..records.lastPage %}
+            <li class="{{ records.currentPage == page ? 'active' : null }}">
+                <a href="{% if page != 1 %}{{ this.page.baseFileName|page({ (pageParam): page }) }}{% else %}{{this.page.url|replace({':page?':''})}}{% endif %}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if records.lastPage > records.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+        {% endif %}
+    </ul>
+  </nav>
+{% endif %} #}

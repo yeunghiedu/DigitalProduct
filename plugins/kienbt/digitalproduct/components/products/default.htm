@@ -1,0 +1,29 @@
+<div class="row" id="Container">
+{% for product in products %}
+  <div class="col-lg-4 col-md-6 col-xs-12 mix" data-price="{{product.price}}" data-date="{{product.created_at|date('Ymd')}}">
+    <div class="card ms-feature">
+      <div class="card-block text-center">
+        {# Use spaceless tag to remove spaces inside the A tag. #}
+        {% spaceless %}
+          <a href="{{ __SELF__.productPage | page({slug: product.slug}) }}">
+            <img src="{{product.images.thumb(310,auto,{'quality':10})}}" alt="{{product.name}}" class="img-responsive center-block">
+          </a>
+          <h4 class="text-normal text-center">{{product.name}}</h4>
+          <div class="mt-2">
+            <span class="ms-tag ms-tag-success">{{product.price|number_format('0',',','.')}} ₫</span>
+          </div>
+          <a href="javascript:void(0)" class="btn btn-primary btn-sm btn-block btn-raised mt-2 no-mb">
+            <i class="zmdi zmdi-shopping-cart-plus"></i> Add to Cart</a>
+        {% endspaceless %}
+      </div>
+    </div>
+  </div>
+{% else %}
+    <p class="no-data">{{ noRecordsMessage }}</p>
+{% endfor %}
+</div>
+{% if products.hasPages %}
+  <nav aria-label="Page navigation" class="text-center">
+    {{ products | raw }}
+  </nav>
+{% endif %}

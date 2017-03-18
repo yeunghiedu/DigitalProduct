@@ -14,44 +14,12 @@ fields:
         preset:
             field: name
             type: slug
+
     toolbar:
         type: partial
         path: product_toolbar
         cssClass: collapse-visible
-    currency:
-        label: 'offline.snipcartshop::lang.plugin.product.currency'
-        oc.commentPosition: ''
-        span: auto
-        type: dropdown
-        tab: 'offline.snipcartshop::lang.plugin.product.general'
-    price:
-        label: 'offline.snipcartshop::lang.plugin.product.price'
-        oc.commentPosition: ''
-        span: auto
-        type: number
-        tab: 'offline.snipcartshop::lang.plugin.product.general'
-    title:
-        label: 'offline.snipcartshop::lang.plugin.product.link_title'
-        oc.commentPosition: ''
-        span: left
-        type: text
-        required: true
-        tab: 'offline.snipcartshop::lang.plugin.common.properties_links'
-    value:
-        label: 'offline.snipcartshop::lang.plugin.product.property_value'
-        size: medium
-        oc.commentPosition: ''
-        span: full
-        type: textarea
-        required: true
-        tab: 'offline.snipcartshop::lang.plugin.common.properties_links'
-    url:
-        label: 'offline.snipcartshop::lang.plugin.product.link_target'
-        oc.commentPosition: ''
-        span: right
-        type: text
-        required: true
-        tab: 'offline.snipcartshop::lang.plugin.common.properties_links'
+
 tabs:
     fields:
         published:
@@ -113,6 +81,7 @@ tabs:
             span: right
             type: relation
             tab: 'offline.snipcartshop::lang.plugin.product.general'
+
         properties:
             label: 'offline.snipcartshop::lang.plugin.product.properties'
             oc.commentPosition: ''
@@ -135,6 +104,7 @@ tabs:
                         span: full
                         type: textarea
                         required: true
+
         links:
             label: 'offline.snipcartshop::lang.plugin.product.links'
             oc.commentPosition: ''
@@ -156,6 +126,7 @@ tabs:
                         span: right
                         type: text
                         required: true
+
         main_image:
             label: 'offline.snipcartshop::lang.plugin.common.main_image'
             oc.commentPosition: ''
@@ -176,9 +147,6 @@ tabs:
             mode: file
             prompt: 'offline.snipcartshop::lang.plugin.common.select_file'
             useCaption: true
-            thumbOptions:
-                mode: crop
-                extension: auto
             span: right
             type: fileupload
             tab: 'offline.snipcartshop::lang.plugin.common.attachments'
@@ -268,6 +236,7 @@ tabs:
         accessories:
             label: 'offline.snipcartshop::lang.plugin.common.accessories'
             span: full
+            span: auto
             type: partial
             path: $/offline/snipcartshop/controllers/products/_accessories.htm
             tab: 'offline.snipcartshop::lang.plugin.common.accessories'
@@ -299,4 +268,3 @@ tabs:
             span: left
             type: textarea
             tab: 'offline.snipcartshop::lang.plugin.common.seo'
-'': {  }

@@ -1,0 +1,199 @@
+==
+{% set pageNumber = placeholder('pageNumber') %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#333">
+    <title>{% if this.page.meta_title %} {{ this.page.meta_title}}{% elseif this.page.title %}{{ this.page.title}}{% endif %}{% if placeholder('pageNumber') %} - {{ pageNumber|raw }}{% endif %} &#124; {{ this.theme.site_title }}</title>
+    <meta name="description" content="{{ this.page.meta_description}} {% if placeholder('pageNumber') %} ( {{ pageNumber|raw }} ){% endif %}">
+    <link rel="shortcut icon" href="{{ 'assets/img/favicon.png?v=3' | theme }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="{{ [
+        'assets/css/preload.min.css',
+        'assets/css/plugins.min.css',
+        'assets/css/style.indigo-500.min.css'
+    ]|theme }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ 'assets/css/width-boxed.min.css' | theme }}" id="ms-boxed" disabled>
+
+    {% styles %}
+  </head>
+  <body class="page-{{ this.page.id }} layout-{{ this.layout.id }}">
+    <div id="ms-preload" class="ms-preload">
+      <div id="status">
+        <div class="spinner">
+          <div class="dot1"></div>
+          <div class="dot2"></div>
+        </div>
+      </div>
+    </div>
+    <div class="sb-site-container">
+      <!-- Modal -->
+      <div class="modal modal-primary" id="ms-account-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog animated zoomIn animated-3x" role="document">
+          <div class="modal-content">
+            <div class="modal-header shadow-2dp no-pb">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">
+                  <i class="zmdi zmdi-close"></i>
+                </span>
+              </button>
+              <div class="modal-title text-center">
+                <span class="ms-logo ms-logo-white ms-logo-sm mr-1">M</span>
+                <h3 class="no-m ms-site-title">Material
+                  <span>Style</span>
+                </h3>
+              </div>
+              <div class="modal-header-tabs">
+                <ul class="nav nav-tabs nav-tabs-full nav-tabs-3 nav-tabs-primary" role="tablist">
+                  <li role="presentation" class="active">
+                    <a href="#ms-login-tab" aria-controls="ms-login-tab" role="tab" data-toggle="tab" class="withoutripple">
+                      <i class="zmdi zmdi-account"></i> Login</a>
+                  </li>
+                  <li role="presentation">
+                    <a href="#ms-register-tab" aria-controls="ms-register-tab" role="tab" data-toggle="tab" class="withoutripple">
+                      <i class="zmdi zmdi-account-add"></i> Register</a>
+                  </li>
+                  <li role="presentation">
+                    <a href="#ms-recovery-tab" aria-controls="ms-recovery-tab" role="tab" data-toggle="tab" class="withoutripple">
+                      <i class="zmdi zmdi-key"></i> Recovery Pass</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="modal-body">
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade active in" id="ms-login-tab">
+                  <form autocomplete="off">
+                    <fieldset>
+                      <div class="form-group label-floating">
+                        <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="zmdi zmdi-account"></i>
+                          </span>
+                          <label class="control-label" for="ms-form-user">Username</label>
+                          <input type="text" id="ms-form-user" class="form-control"> </div>
+                      </div>
+                      <div class="form-group label-floating">
+                        <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="zmdi zmdi-lock"></i>
+                          </span>
+                          <label class="control-label" for="ms-form-pass">Password</label>
+                          <input type="password" id="ms-form-pass" class="form-control"> </div>
+                      </div>
+                      <div class="row mt-2">
+                        <div class="col-md-6">
+                          <div class="form-group no-mt">
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox"> Remember Me </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <button class="btn btn-raised btn-primary pull-right">Login</button>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form>
+                  <div class="text-center">
+                    <h3>Login with</h3>
+                    <a href="javascript:void(0)" class="wave-effect-light btn btn-raised btn-facebook">
+                      <i class="zmdi zmdi-facebook"></i> Facebook</a>
+                    <a href="javascript:void(0)" class="wave-effect-light btn btn-raised btn-twitter">
+                      <i class="zmdi zmdi-twitter"></i> Twitter</a>
+                    <a href="javascript:void(0)" class="wave-effect-light btn btn-raised btn-google">
+                      <i class="zmdi zmdi-google"></i> Google</a>
+                  </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="ms-register-tab">
+                  <form>
+                    <fieldset>
+                      <div class="form-group label-floating">
+                        <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="zmdi zmdi-account"></i>
+                          </span>
+                          <label class="control-label" for="ms-form-user">Username</label>
+                          <input type="text" id="ms-form-user" class="form-control"> </div>
+                      </div>
+                      <div class="form-group label-floating">
+                        <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="zmdi zmdi-email"></i>
+                          </span>
+                          <label class="control-label" for="ms-form-email">Email</label>
+                          <input type="email" id="ms-form-email" class="form-control"> </div>
+                      </div>
+                      <div class="form-group label-floating">
+                        <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="zmdi zmdi-lock"></i>
+                          </span>
+                          <label class="control-label" for="ms-form-pass">Password</label>
+                          <input type="password" id="ms-form-pass" class="form-control"> </div>
+                      </div>
+                      <div class="form-group label-floating">
+                        <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="zmdi zmdi-lock"></i>
+                          </span>
+                          <label class="control-label" for="ms-form-pass">Re-type Password</label>
+                          <input type="password" id="ms-form-pass" class="form-control"> </div>
+                      </div>
+                      <button class="btn btn-raised btn-block btn-primary">Register Now</button>
+                    </fieldset>
+                  </form>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="ms-recovery-tab">
+                  <fieldset>
+                    <div class="form-group label-floating">
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <i class="zmdi zmdi-account"></i>
+                        </span>
+                        <label class="control-label" for="ms-form-user">Username</label>
+                        <input type="text" id="ms-form-user" class="form-control"> </div>
+                    </div>
+                    <div class="form-group label-floating">
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <i class="zmdi zmdi-email"></i>
+                        </span>
+                        <label class="control-label" for="ms-form-email">Email</label>
+                        <input type="email" id="ms-form-email" class="form-control"> </div>
+                    </div>
+                    <button class="btn btn-raised btn-block btn-primary">Send Password</button>
+                  </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <header class="ms-header ms-header-primary">
+        {% partial "header" %}
+      </header>
+      <nav class="navbar navbar-static-top yamm ms-navbar ms-navbar-primary">
+        {% partial "nav" %}
+        <!-- container -->
+      </nav>
+      {% page %}
+      <!-- container -->
+      {% partial "footer" %}
+    </div>
+    <!-- sb-site-container -->
+    {% partial "global-sidebar" %}
+    <script src="{{ [
+            'assets/js/plugins.min.js',
+            'assets/js/app.min.js',
+        ]|theme }}"></script>
+    {% framework extras %}
+    {% scripts %}
+  </body>
+</html>

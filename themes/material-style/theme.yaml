@@ -1,0 +1,10 @@
+name: 'Material Style'
+description: 'My first october theme. Build on bootstrap 3 and material style'
+author: kienbt
+homepage: ''
+code: yeunghiepdu
+form:
+    fields:
+        site_title:
+            label: Site name
+            comment: The website name as it should appear on the meta title

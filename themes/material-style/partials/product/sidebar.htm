@@ -1,0 +1,61 @@
+[viewBag]
+==
+<div class="card card-primary">
+  <div class="card-header">
+    <h3 class="card-title">Filter List</h3>
+  </div>
+  <div class="card-block">
+    <form class="form-horizontal" id="Filters">
+      <h4 class="mb-1 no-mt">Devices</h4>
+      <fieldset>
+        <div class="form-group no-mt">
+          <div class="checkbox ml-2">
+            <label>
+              <input type="checkbox" value=".smartphone"> Smartphones </label>
+          </div>
+          <div class="checkbox  ml-2">
+            <label>
+              <input type="checkbox" value=".tablet"> Tablets </label>
+          </div>
+          <div class="checkbox  ml-2">
+            <label>
+              <input type="checkbox" value=".laptop"> Laptops </label>
+          </div>
+          <div class="checkbox  ml-2">
+            <label>
+              <input type="checkbox" value=".accessory"> Accesories </label>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <h4 class="mb-1">Brand</h4>
+        <div class="form-group no-mt">
+          <div class="checkbox  ml-2">
+            <label>
+              <input type="checkbox" value=".apple"> Apple </label>
+          </div>
+          <div class="checkbox  ml-2">
+            <label>
+              <input type="checkbox" value=".microsoft"> Microsoft </label>
+          </div>
+          <div class="checkbox  ml-2">
+            <label>
+              <input type="checkbox" value=".samsung"> Samsung </label>
+          </div>
+        </div>
+      </fieldset>
+      <button class="btn btn-danger btn-block no-mb mt-2" id="Reset">
+        <i class="zmdi zmdi-delete"></i> Clear Filters</button>
+    </form>
+    <form class="form-horizontal">
+      <h4>Sort by</h4>
+      <select id="SortSelect" class="form-control selectpicker">
+        <option value="random">Popular</option>
+        <option value="price:asc">Price ASC</option>
+        <option value="price:desc">Price DESC</option>
+        <option value="date:asc">Release ASC</option>
+        <option value="date:desc">Release DESC</option>
+      </select>
+    </form>
+  </div>
+</div>

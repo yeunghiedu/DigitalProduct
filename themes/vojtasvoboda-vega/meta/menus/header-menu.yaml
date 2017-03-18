@@ -1,0 +1,24 @@
+name: 'Header menu'
+items:
+    -
+        title: Homepage
+        type: cms-page
+        code: ''
+        reference: home
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Giới thiệu'
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: aboutus
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
