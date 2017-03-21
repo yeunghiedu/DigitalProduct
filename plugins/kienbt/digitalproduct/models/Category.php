@@ -86,9 +86,9 @@ class Category extends Model
 
         $pageSlug = 'slug';
 
-        if ( ! $pageUrl = GeneralSettings::get('category_page')) {
+        if ( ! $pageUrl = 'category') {
             throw new InvalidArgumentException(
-                'SnipcartShop: Please select a category page via the backend settings.'
+                'Please select a category page via the backend settings.'
             );
         }
 
