@@ -2,9 +2,13 @@ name: 'Category list'
 items:
     -
         title: 'New menu item'
+        nesting: ''
         type: all-product-categories
+        url: ''
         code: ''
-        replace: '0'
+        reference: ''
+        cmsPage: ''
+        replace: '1'
         viewBag:
             isHidden: '0'
             cssClass: ''

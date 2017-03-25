@@ -14,10 +14,5 @@ modelKeyColumn = "slug"
 displayColumn = "name"
 notFoundMessage = "Record not found"
 
-[staticMenu]
-code = "category-list"
 ==
 {% component 'builderDetails' %}
-{% for item in staticMenu.menuItems %}
-   <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-{% endfor %}

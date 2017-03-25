@@ -3,6 +3,9 @@
 use Cms\Classes\Controller;
 use InvalidArgumentException;
 use Model;
+use Db;
+use Kienbt\Digitalproduct\Models\Product;
+use October\Rain\Support\Collection;
 
 /**
  * Model
@@ -84,6 +87,14 @@ class Category extends Model
         $structure = [];
         $category  = new Category();
 
+        $productCount = Db::table('kienbt_digitalproduct_products')
+                    ->select('category_id', Db::raw('count(*) as num'))
+                    ->where('published',1)
+                    ->groupBy('category_id')
+                    ->get();
+        $collection = new Collection($productCount);
+        $productCount = $collection->keyBy('category_id');
+
         $pageSlug = 'slug';
 
         if ( ! $pageUrl = 'category') {
@@ -92,7 +103,7 @@ class Category extends Model
             );
         }
 
-        $iterator = function ($items, $baseUrl = '') use (&$iterator, &$structure, $pageUrl, $pageSlug, $url) {
+        $iterator = function ($items, $baseUrl = '') use (&$iterator, &$structure, $pageUrl, $pageSlug, $url, $productCount) {
             $branch = [];
 
             $controller = new Controller();
@@ -103,9 +114,25 @@ class Category extends Model
 
                 $entryUrl               = $controller->pageUrl($pageUrl, [$pageSlug => $slug]);
                 $branchItem             = [];
+                $branchItem['id']       = $item->id;
                 $branchItem['url']      = $entryUrl;
                 $branchItem['isActive'] = $entryUrl === $url;
                 $branchItem['title']    = $item->name;
+                $branchItem['count']    = 0;
+
+                //count number product published in category
+                if ($item->isRoot()) {
+                    $childCatId = $item->getAllChildrenAndSelf()->lists('id');
+                    for ($i=0; $i < count($childCatId); $i++) { 
+                        if (isset($productCount[$childCatId[$i]])) {
+                            $branchItem['count'] += $productCount[$childCatId[$i]]->num;
+                        }
+                    }
+                } else {
+                    if (isset($productCount[$item->id])) {
+                        $branchItem['count'] += $productCount[$item->id]->num;
+                    }
+                }
 
                 if ($item->children) {
                     $branchItem['items'] = $iterator($item->children, $item->slug);
@@ -116,9 +143,8 @@ class Category extends Model
 
             return $branch;
         };
-
         $structure['items'] = $iterator($category->getEagerRoot());
-
+dd($structure);
         return $structure;
     }
 
