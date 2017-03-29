@@ -1,33 +1,29 @@
-[viewBag]
 [staticMenu]
 code = "category-list"
 ==
-<div class="panel-group ms-collapse no-margin" id="catList" role="tablist" aria-multiselectable="true">
+<div class="panel-group ms-collapse" id="catList" role="tablist" aria-multiselectable="true">
   {% for item in staticMenu.menuItems %}
-    <li>
-      <a href="{{ item.url }}">{{ item.title }}</a>
-    </li>
     <div class="panel panel-primary">
-      <div class="panel-heading" role="tab" id="headingOne4">
-        <h4 class="panel-title">
-          <a class="collapsed withripple" role="button" data-toggle="collapse" data-parent="#catList" href="#collapse{{ item.id }}" aria-expanded="true" aria-controls="collapse{{ item.id }}">
-            <i class="zmdi zmdi-pin"></i> {{ item.title }} </a>
+      <div class="panel-heading" role="tab" id="headingOne{{ item.viewBag.id }}">
+        <h4 class="panel-title ms-rotate-icon">
+          <a class="collapsed withripple" role="button" data-toggle="collapse" data-parent="#catList" href="#collapse{{ item.viewBag.id }}" aria-expanded="true" aria-controls="collapse{{ item.viewBag.id }}">
+            <i class="zmdi zmdi-collection-plus"></i> {{ item.title }} </a>
         </h4>
       </div>
-      <div id="collapse{{ item.id }}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne4">
+      <div id="collapse{{ item.viewBag.id }}" class="panel-collapse collapse {% if item.isActive or item.isChildActive %}in{% endif %}" role="tabpanel" aria-labelledby="headingOne{{ item.viewBag.id }}">
         <div class="panel-body">
-          {% if item.items %}
-            <div class="list-group">
-              <a href="javascript:void(0)" class="list-group-item withripple">
-                <i class="color-primary zmdi zmdi-favorite-outline"></i>
-                <span class="badge bg-danger">5</span>Cras justo odio</a>
-            </div>
-          <ul>
-            {% for subitem in item.items %}
-              <li><a href="{{ subitem.url }}">{{ subitem.title }}</a></li>
-            {% endfor %}
-          </ul>
-          {% endif %}
+          <div class="list-group">
+            <a href="{{ item.url }}" class="list-group-item withripple {% if item.isActive %}active{% endif %}">
+              <i class="zmdi zmdi-flare"></i>
+              <span class="badge badge-round">{{ item.viewBag.count }}</span>Tất cả {{ item.title }}</a>
+            {% if item.items %}
+              {% for subitem in item.items %}
+                <a href="{{ subitem.url }}" class="list-group-item withripple {% if subitem.isActive %}active{% endif %}">
+                  <i class="zmdi zmdi-flare"></i>
+                  <span class="badge badge-round">{{ subitem.viewBag.count }}</span>{{ subitem.title }}</a>
+              {% endfor %}
+            {% endif %}
+          </div>
         </div>
       </div>
     </div>

@@ -110,27 +110,28 @@ class Category extends Model
             foreach ($items as $item) {
 
                 // Prepend the parent categories slug if available
-                $slug = $baseUrl ? $baseUrl . '/' . $item->slug : $item->slug;
+                // $slug = $baseUrl ? $baseUrl . '/' . $item->slug : $item->slug;
+                $slug = $item->slug;
 
                 $entryUrl               = $controller->pageUrl($pageUrl, [$pageSlug => $slug]);
                 $branchItem             = [];
-                $branchItem['id']       = $item->id;
+                $branchItem['viewBag']['id']       = $item->id;
                 $branchItem['url']      = $entryUrl;
                 $branchItem['isActive'] = $entryUrl === $url;
                 $branchItem['title']    = $item->name;
-                $branchItem['count']    = 0;
+                $branchItem['viewBag']['count']    = 0;
 
                 //count number product published in category
                 if ($item->isRoot()) {
                     $childCatId = $item->getAllChildrenAndSelf()->lists('id');
-                    for ($i=0; $i < count($childCatId); $i++) { 
+                    for ($i=0; $i < count($childCatId); $i++) {
                         if (isset($productCount[$childCatId[$i]])) {
-                            $branchItem['count'] += $productCount[$childCatId[$i]]->num;
+                            $branchItem['viewBag']['count'] += $productCount[$childCatId[$i]]->num;
                         }
                     }
                 } else {
                     if (isset($productCount[$item->id])) {
-                        $branchItem['count'] += $productCount[$item->id]->num;
+                        $branchItem['viewBag']['count'] += $productCount[$item->id]->num;
                     }
                 }
 
@@ -144,7 +145,7 @@ class Category extends Model
             return $branch;
         };
         $structure['items'] = $iterator($category->getEagerRoot());
-dd($structure);
+// dd($structure);
         return $structure;
     }
 
