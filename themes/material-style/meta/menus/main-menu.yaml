@@ -2,22 +2,22 @@ name: 'Main menu'
 items:
     -
         title: 'Trang chủ'
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: home
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
-        title: Themes
-        nesting: ''
-        type: cms-page
-        url: ''
+        title: Product
+        type: all-product-categories
         code: ''
-        reference: themes
-        cmsPage: ''
-        replace: ''
+        replace: '1'
         viewBag:
             isHidden: '0'
             cssClass: ''
