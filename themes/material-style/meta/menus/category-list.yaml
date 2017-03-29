@@ -1,10 +1,10 @@
 name: 'Category list'
 items:
     -
-        title: 'New menu item'
-        type: all-snipcartshop-categories
+        title: 'All product categories'
+        type: all-product-categories
         code: ''
-        replace: '0'
+        replace: '1'
         viewBag:
             isHidden: '0'
             cssClass: ''

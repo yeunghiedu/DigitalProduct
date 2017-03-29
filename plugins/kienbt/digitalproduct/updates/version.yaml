@@ -26,4 +26,7 @@
     - builder_table_update_kienbt_digitalproduct_products.php
 1.0.10:
     - 'Updated table kienbt_digitalproduct_products'
-    - builder_table_update_kienbt_digitalproduct_products_2.php
+    - builder_table_update_kienbt_digitalproduct_products2.php
+1.0.11:
+    - 'Updated table kienbt_digitalproduct_categories'
+    - builder_table_update_kienbt_digitalproduct_categories.php

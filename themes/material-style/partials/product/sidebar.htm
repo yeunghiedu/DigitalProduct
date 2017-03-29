@@ -1,61 +1,85 @@
-[viewBag]
+[staticMenu]
+code = "category-list"
 ==
-<div class="card card-primary">
-  <div class="card-header">
-    <h3 class="card-title">Filter List</h3>
-  </div>
-  <div class="card-block">
-    <form class="form-horizontal" id="Filters">
-      <h4 class="mb-1 no-mt">Devices</h4>
-      <fieldset>
-        <div class="form-group no-mt">
-          <div class="checkbox ml-2">
-            <label>
-              <input type="checkbox" value=".smartphone"> Smartphones </label>
-          </div>
-          <div class="checkbox  ml-2">
-            <label>
-              <input type="checkbox" value=".tablet"> Tablets </label>
-          </div>
-          <div class="checkbox  ml-2">
-            <label>
-              <input type="checkbox" value=".laptop"> Laptops </label>
-          </div>
-          <div class="checkbox  ml-2">
-            <label>
-              <input type="checkbox" value=".accessory"> Accesories </label>
+<div class="panel-group ms-collapse" id="catList" role="tablist" aria-multiselectable="true">
+  {% for item in staticMenu.menuItems %}
+    <div class="panel panel-primary">
+      <div class="panel-heading" role="tab" id="headingOne{{ item.viewBag.id }}">
+        <h4 class="panel-title ms-rotate-icon">
+          <a class="collapsed withripple" role="button" data-toggle="collapse" data-parent="#catList" href="#collapse{{ item.viewBag.id }}" aria-expanded="true" aria-controls="collapse{{ item.viewBag.id }}">
+            <i class="zmdi zmdi-collection-plus"></i> {{ item.title }} </a>
+        </h4>
+      </div>
+      <div id="collapse{{ item.viewBag.id }}" class="panel-collapse collapse {% if item.isActive or item.isChildActive %}in{% endif %}" role="tabpanel" aria-labelledby="headingOne{{ item.viewBag.id }}">
+        <div class="panel-body">
+          <div class="list-group">
+            <a href="{{ item.url }}" class="list-group-item withripple {% if item.isActive %}active{% endif %}">
+              <i class="zmdi zmdi-flare"></i>
+              <span class="badge badge-round">{{ item.viewBag.count }}</span>Tất cả {{ item.title }}</a>
+            {% if item.items %}
+              {% for subitem in item.items %}
+                <a href="{{ subitem.url }}" class="list-group-item withripple {% if subitem.isActive %}active{% endif %}">
+                  <i class="zmdi zmdi-flare"></i>
+                  <span class="badge badge-round">{{ subitem.viewBag.count }}</span>{{ subitem.title }}</a>
+              {% endfor %}
+            {% endif %}
           </div>
         </div>
-      </fieldset>
-      <fieldset>
-        <h4 class="mb-1">Brand</h4>
-        <div class="form-group no-mt">
-          <div class="checkbox  ml-2">
-            <label>
-              <input type="checkbox" value=".apple"> Apple </label>
-          </div>
-          <div class="checkbox  ml-2">
-            <label>
-              <input type="checkbox" value=".microsoft"> Microsoft </label>
-          </div>
-          <div class="checkbox  ml-2">
-            <label>
-              <input type="checkbox" value=".samsung"> Samsung </label>
-          </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+<div class="card-block hidden">
+  <form class="form-horizontal" id="Filters">
+    <h4 class="mb-1 no-mt">Devices</h4>
+    <fieldset>
+      <div class="form-group no-mt">
+        <div class="checkbox ml-2">
+          <label>
+            <input type="checkbox" value=".smartphone"> Smartphones </label>
         </div>
-      </fieldset>
-      <button class="btn btn-danger btn-block no-mb mt-2" id="Reset">
-        <i class="zmdi zmdi-delete"></i> Clear Filters</button>
-    </form>
-    <form class="form-horizontal">
-      <h4>Sort by</h4>
-      <select id="SortSelect" class="form-control selectpicker">
-        <option value="random">Popular</option>
-        <option value="price:asc">Price ASC</option>
-        <option value="price:desc">Price DESC</option>
-        <option value="date:asc">Release ASC</option>
-        <option value="date:desc">Release DESC</option>
-      </select>
-    </form>
-  </div>
+        <div class="checkbox  ml-2">
+          <label>
+            <input type="checkbox" value=".tablet"> Tablets </label>
+        </div>
+        <div class="checkbox  ml-2">
+          <label>
+            <input type="checkbox" value=".laptop"> Laptops </label>
+        </div>
+        <div class="checkbox  ml-2">
+          <label>
+            <input type="checkbox" value=".accessory"> Accesories </label>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <h4 class="mb-1">Brand</h4>
+      <div class="form-group no-mt">
+        <div class="checkbox  ml-2">
+          <label>
+            <input type="checkbox" value=".apple"> Apple </label>
+        </div>
+        <div class="checkbox  ml-2">
+          <label>
+            <input type="checkbox" value=".microsoft"> Microsoft </label>
+        </div>
+        <div class="checkbox  ml-2">
+          <label>
+            <input type="checkbox" value=".samsung"> Samsung </label>
+        </div>
+      </div>
+    </fieldset>
+    <button class="btn btn-danger btn-block no-mb mt-2" id="Reset">
+      <i class="zmdi zmdi-delete"></i> Clear Filters</button>
+  </form>
+  <form class="form-horizontal">
+    <h4>Sort by</h4>
+    <select id="SortSelect" class="form-control selectpicker">
+      <option value="random">Popular</option>
+      <option value="price:asc">Price ASC</option>
+      <option value="price:desc">Price DESC</option>
+      <option value="date:asc">Release ASC</option>
+      <option value="date:desc">Release DESC</option>
+    </select>
+  </form>
 </div>
